@@ -1,0 +1,249 @@
+devices:
+- name: Axe-FX
+  midi_channel: 3
+  controllers:
+    - name: level1
+      cc: 16
+      scale: db
+    - name: level2
+      cc: 17
+      scale: db
+    - name: gain1
+      cc: 18
+    - name: gain2
+      cc: 19
+    - name: amp1
+      cc: 37
+      kind: onoff
+    - name: amp1_xy
+      cc: 100
+      kind: xy
+    - name: cab1
+      cc: 39
+      kind: onoff
+    - name: cab1_xy
+      cc: 102
+      kind: xy
+    - name: gte1
+      cc: 60
+      kind: onoff
+    - name: cmp1
+      cc: 43
+      kind: onoff
+    - name: pit1
+      cc: 77
+      kind: onoff
+    - name: rtr1
+      cc: 86
+      kind: onoff
+    - name: phr1
+      cc: 75
+      kind: onoff
+    - name: cho1
+      cc: 41
+      kind: onoff
+    - name: dly1
+      cc: 47
+      kind: onoff
+    - name: amp2
+      cc: 38
+      kind: onoff
+    - name: amp2_xy
+      cc: 101
+      kind: xy
+    - name: cab2
+      cc: 40
+      kind: onoff
+    - name: cab2_xy
+      cc: 103
+      kind: xy
+    - name: gte2
+      cc: 61
+      kind: onoff
+    - name: cmp2
+      cc: 44
+      kind: onoff
+    - name: pit2
+      cc: 78
+      kind: onoff
+    - name: rtr2
+      cc: 87
+      kind: onoff
+    - name: phr2
+      cc: 76
+      kind: onoff
+    - name: cho2
+      cc: 42
+      kind: onoff
+    - name: dly2
+      cc: 48
+      kind: onoff
+midi_programs:
+- midi: 0
+  amps:
+  - name: MG
+    gain_controller_cc: 18
+    volume_controller_cc: 16
+    blocks:
+    - name: amp1
+      enabled_switch_cc: 37
+      xy_switch_cc: 100
+    - name: cab1
+      enabled_switch_cc: 39
+      xy_switch_cc: 102
+    - name: gte1
+      enabled_switch_cc: 60
+    - name: cmp1
+      enabled_switch_cc: 43
+    - name: pit1
+      enabled_switch_cc: 77
+    - name: rtr1
+      enabled_switch_cc: 86
+    - name: phr1
+      enabled_switch_cc: 75
+    - name: cho1
+      enabled_switch_cc: 41
+    - name: dly1
+      enabled_switch_cc: 47
+    tones:
+    - name: clean
+      gain: 18
+      volume: 0
+      blocks:
+      - name: amp1
+        on: true
+        xy: Y
+      - name: cab1
+        on: true
+        xy: X
+      - name: gte1
+        on: false
+        xy: X
+      - name: cmp1
+        on: true
+        xy: X
+    - name: dirty
+      gain: 64
+      volume: 0
+      blocks:
+      - name: amp1
+        on: true
+        xy: X
+      - name: cab1
+        on: true
+        xy: X
+      - name: gte1
+        on: true
+        xy: X
+      - name: cmp1
+        on: true
+        xy: X
+    - name: acoustic
+      gain: 18
+      volume: 0
+      blocks:
+      - name: amp1
+        on: false
+        xy: Y
+      - name: cab1
+        on: true
+        xy: Y
+      - name: gte1
+        on: false
+        xy: X
+      - name: cmp1
+        on: true
+        xy: X
+  - name: JD
+    gain_controller_cc: 19
+    volume_controller_cc: 17
+    blocks:
+    - name: amp2
+      enabled_switch_cc: 38
+      xy_switch_cc: 101
+    - name: cab2
+      enabled_switch_cc: 40
+      xy_switch_cc: 103
+    - name: gte2
+      enabled_switch_cc: 61
+    - name: cmp2
+      enabled_switch_cc: 44
+    - name: pit2
+      enabled_switch_cc: 78
+    - name: rtr2
+      enabled_switch_cc: 87
+    - name: phr2
+      enabled_switch_cc: 76
+    - name: cho2
+      enabled_switch_cc: 42
+    - name: dly2
+      enabled_switch_cc: 48
+    tones:
+    - name: clean
+      gain: 18
+      volume: 0
+      blocks:
+      - name: amp2
+        on: true
+        xy: Y
+      - name: cab2
+        on: true
+        xy: X
+      - name: gte2
+        on: false
+        xy: X
+      - name: cmp2
+        on: true
+        xy: X
+    - name: dirty
+      gain: 64
+      volume: 0
+      blocks:
+      - name: amp2
+        on: true
+        xy: X
+      - name: cab2
+        on: true
+        xy: X
+      - name: gte2
+        on: true
+        xy: X
+      - name: cmp2
+        on: true
+        xy: X
+    - name: acoustic
+      gain: 18
+      volume: 0
+      blocks:
+      - name: amp2
+        on: false
+        xy: Y
+      - name: cab2
+        on: true
+        xy: Y
+      - name: gte2
+        on: false
+        xy: X
+      - name: cmp2
+        on: true
+        xy: X
+  songs:
+  - name: Monkey Wrench
+    short_name: Monkey Wrench
+    alternate_names:
+    - Monkey Wrench
+    - Monkeywrench
+    who_starts: Bremer 4 ct
+    tempo: 175
+    amps:
+    - tones:
+      - name: dirty0
+        gain: 68
+    - tones:
+      - name: dirty0
+        gain: 68
+    scenes:
+    - name: JD dirty;MG dirty
+      amps:
+      - tone: dirty0
+      - tone: dirty0
